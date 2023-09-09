@@ -8,16 +8,20 @@ import Button from "./Button.astro";
   <Image
     src={HeroImage}
     alt="efb"
-    class="h-screen object-cover opacity-40 absolute top-0 left-0 w-full"
+    class="h-screen object-cover absolute top-0 left-0 w-full z-0"
   />
+  <div class="absolute w-full h-full top-0 left-0 opacity-50 bg-black z-10">
+  </div>
   <header
-    class="absolute top-1/3 2xl:max-w-6xl 2xl:left-24 md:max-w-3xl md:left-16 max-w-sm px-8"
+    class="absolute top-1/3 2xl:max-w-7xl 2xl:left-24 md:max-w-4xl md:left-16 max-w-lg px-8 z-20"
   >
     <h1
       class="2xl:text-7xl 2xl:leading-snug md:leading-snug md:text-5xl font-bold text-light text-4xl leading-relaxed"
     >
       Sport jako Pasja i Przygoda na całe Życie - Zacznij ją z Nami
     </h1>
-    <Button title="Dołącz do nas" />
+    <div class="md:mt-16 md:ml-20 mt-20 ml-4">
+      <Button title="Dołącz do nas" />
+    </div>
   </header>
 </section>

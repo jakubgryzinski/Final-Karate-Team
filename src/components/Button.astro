@@ -6,6 +6,8 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<button>
+<button
+  class="border-4 border-primary px-8 py-4 flex justify-center items-center rounded-xl text-gray-200 text-2xl hover:text-gray-light hover:bg-white/10 transition-all hover:backdrop-blur-md"
+>
   {title}
 </button>
