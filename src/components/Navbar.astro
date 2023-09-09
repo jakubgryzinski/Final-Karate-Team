@@ -1,23 +1,47 @@
 ---
 import { Image } from "astro:assets";
 import LogoImage from "../assets/images/logo.jpeg";
+import {
+  BiLogoFacebookCircle,
+  BiLogoInstagram,
+  BiLogoYoutube,
+} from "react-icons/bi";
 ---
 
 <nav
-  class="fixed top-0 z-20 flex items-center md:justify-start gap-12 w-full text-white px-24 xl:px-52 transition-all bg-white/10 h-24 p-2 backdrop-blur-md tracking-wide"
+  class="fixed top-0 z-20 flex items-center md:justify-between w-full text-white px-4 md:px-12 xl:px-24 2xl:px-52 transition-all bg-white/10 h-24 p-2 backdrop-blur-md tracking-wide"
 >
-  <a href="/">
-    <Image src={LogoImage} alt="df" class="rounded-full w-20" />
-  </a>
-  <ul class="flex gap-8 text-xl">
-    <li class="text-light hover:text-gray-300">
-      <a href="/instruktorzy">Instruktorzy</a>
+  <span class="flex items-center gap-12">
+    <a href="/">
+      <Image src={LogoImage} alt="df" class="rounded-full w-20" />
+    </a>
+    <ul class="gap-8 text-xl md:flex hidden">
+      <li class="text-light hover:text-gray-300">
+        <a href="/instruktorzy">Instruktorzy</a>
+      </li>
+      <li class="text-light hover:text-gray-300">
+        <a href="/galeria">Galeria</a>
+      </li>
+      <li class="text-light hover:text-gray-300">
+        <a href="/kontakt">Kontakt</a>
+      </li>
+    </ul>
+  </span>
+  <ul class="gap-2 md:flex hidden">
+    <li>
+      <BiLogoFacebookCircle
+        className="text-primary text-5xl cursor-pointer hover:text-primaryHover transition-all"
+      />
     </li>
-    <li class="text-light hover:text-gray-300">
-      <a href="/galeria">Galeria</a>
+    <li>
+      <BiLogoInstagram
+        className="text-primary text-5xl cursor-pointer hover:text-primaryHover transition-all"
+      />
     </li>
-    <li class="text-light hover:text-gray-300">
-      <a href="/kontakt">Kontakt</a>
+    <li>
+      <BiLogoYoutube
+        className="text-primary text-5xl cursor-pointer hover:text-primaryHover transition-all"
+      />
     </li>
   </ul>
 </nav>
