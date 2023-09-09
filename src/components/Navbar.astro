@@ -9,12 +9,15 @@ import {
 ---
 
 <nav
-  class="fixed top-0 z-20 flex items-center md:justify-between w-full text-white px-4 md:px-12 xl:px-24 2xl:px-52 transition-all bg-white/10 h-24 p-2 backdrop-blur-md tracking-wide"
+  class="fixed top-0 z-20 flex items-center md:justify-between w-full text-white px-2 md:px-12 xl:px-24 2xl:px-52 transition-all bg-white/10 md:h-24 h-20 p-2 backdrop-blur-md tracking-wide"
 >
-  <span class="flex items-center gap-12">
+  <span class="flex items-center md:gap-12 gap-4">
     <a href="/">
-      <Image src={LogoImage} alt="df" class="rounded-full w-20" />
+      <Image src={LogoImage} alt="df" class="rounded-full md:w-20 w-14" />
     </a>
+    <a class="md:hidden flex text-lg text-light hover:text-gray-300"
+      >Karate Team Oborniki</a
+    >
     <ul class="gap-8 text-xl md:flex hidden">
       <li class="text-light hover:text-gray-300">
         <a href="/instruktorzy">Instruktorzy</a>
