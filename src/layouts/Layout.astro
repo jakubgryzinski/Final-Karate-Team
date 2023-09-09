@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Navbar from "../components/Navbar.tsx";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
@@ -18,7 +18,7 @@ import Navbar from "../components/Navbar.tsx";
     <title>{title}</title>
   </head>
   <body>
-    <Navbar client:load />
+    <Navbar />
     <slot />
   </body>
 </html>
