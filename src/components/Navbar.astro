@@ -1,11 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import LogoImage from "../assets/images/logo.jpeg";
-import {
-  BiLogoFacebookCircle,
-  BiLogoInstagram,
-  BiLogoYoutube,
-} from "react-icons/bi";
+import SocialsIcons from "./SocialsIcons.astro";
 ---
 
 <nav
@@ -13,9 +9,9 @@ import {
 >
   <span class="flex items-center md:gap-12 gap-4">
     <a href="/">
-      <Image src={LogoImage} alt="df" class="rounded-full md:w-20 w-14" />
+      <Image src={LogoImage} alt="Logo" class="rounded-full md:w-20 w-14" />
     </a>
-    <a class="md:hidden flex text-lg text-light hover:text-gray-300"
+    <a href="/" class="md:hidden flex text-lg text-light hover:text-gray-300"
       >Karate Team Oborniki</a
     >
     <ul class="gap-8 text-xl md:flex hidden">
@@ -30,21 +26,7 @@ import {
       </li>
     </ul>
   </span>
-  <ul class="gap-4 md:flex hidden">
-    <li>
-      <BiLogoFacebookCircle
-        className="text-primary text-5xl cursor-pointer hover:text-primaryHover transition-all"
-      />
-    </li>
-    <li>
-      <BiLogoInstagram
-        className="text-primary text-5xl cursor-pointer hover:text-primaryHover transition-all"
-      />
-    </li>
-    <li>
-      <BiLogoYoutube
-        className="text-primary text-5xl cursor-pointer hover:text-primaryHover transition-all"
-      />
-    </li>
-  </ul>
+  <span class="md:flex hidden">
+    <SocialsIcons />
+  </span>
 </nav>
