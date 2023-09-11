@@ -27,11 +27,12 @@ export default function MobileMedu() {
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       <button
         ref={buttonRef}
-        className={`md:hidden inline-flex items-center w-10 h-10 justify-center text-sm  rounded-lg  transition-all ${
+        className={`md:hidden inline-flex items-center w-10 h-10 justify-center text-sm  rounded-lg  transition-all  ${
           isOpen ? "text-gray-500" : "text-light"
         }`}
         onClick={toggleIsOpen}
@@ -59,14 +60,16 @@ export default function MobileMedu() {
       </button>
       <div
         ref={menuRef}
-        className={` w-full px-2 top-20 left-0  ${isOpen ? "fixed" : "hidden"}`}
+        className={`w-full px-2 top-20 left-0 z-40  ${
+          isOpen ? "fixed" : "hidden"
+        }`}
       >
-        <ul className="font-medium flex flex-col p-4 md:p-0 mt-2 rounded-lg bg-white/30 ">
+        <ul className="font-medium flex flex-col p-4 md:p-0 mt-2 rounded-lg bg-black/60  ">
           <li>
             <a
               href="/instruktorzy"
               onClick={() => setIsOpen(false)}
-              className="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/30"
+              className="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/30 "
             >
               Instruktorzy
             </a>
@@ -84,7 +87,7 @@ export default function MobileMedu() {
             <a
               href="/kontakt"
               onClick={() => setIsOpen(false)}
-              className="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/30"
+              className="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/30 "
             >
               Kontakt
             </a>
