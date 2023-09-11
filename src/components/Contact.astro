@@ -2,13 +2,17 @@
 import SocialsIcons from "./SocialsIcons.astro";
 ---
 
-<section class="2xl:max-w-screen-2xl w-full min-h-full flex justify-center">
-  <div class="w-1/2 p-16 pr-14 pl-24">
-    <div class="w-full h-full justify-between flex flex-col py-10">
+<section
+  class="2xl:max-w-screen-2xl w-full min-h-full flex md:flex-row flex-col justify-center p-4 gap-4 md:gap-0"
+>
+  <div class="md:w-1/2 p-4 md:p-16 2xl:pr-14 2xl:pl-24">
+    <div
+      class="w-full h-full justify-between flex flex-col py-10 md:gap-0 gap-32"
+    >
       <span class="flex flex-col w-full justify-center items-center gap-28">
         <a
           href="/"
-          class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 text-3xl"
+          class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +32,7 @@ import SocialsIcons from "./SocialsIcons.astro";
         </a>
         <a
           href="/"
-          class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 text-3xl"
+          class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
           <svg
             class="text-primary"
@@ -49,7 +53,7 @@ import SocialsIcons from "./SocialsIcons.astro";
         </a>
         <a
           href="/"
-          class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 text-3xl"
+          class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
           <svg
             class="text-primary"
@@ -74,8 +78,9 @@ import SocialsIcons from "./SocialsIcons.astro";
       </span>
     </div>
   </div>
-  <span class="w-[3px] rounded-full h-full bg-light"></span>
-  <div class="w-1/2 p-16 pl-14 pr-24">
+  <span class="md:w-[3px] w-full rounded-full md:h-full h-[3px] bg-light"
+  ></span>
+  <div class="md:w-1/2 p-4 md:p-16 md:h-auto h-[40rem] 2xl:pr-14 2xl:pl-24">
     <div class="w-full h-full">
       <iframe
         class="w-full h-full"
