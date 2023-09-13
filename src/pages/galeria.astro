@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Gallery from "../components/Gallery.astro";
+import Gallery from "../components/gallery.astro";
+import Carousel from "../components/Carousel";
 ---
 
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
-    <Gallery />
+    <Carousel client:only />
   </main>
 </Layout>
