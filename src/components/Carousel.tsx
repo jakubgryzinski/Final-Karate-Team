@@ -2,24 +2,18 @@ import React, { useState } from "react";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import useKeypress from "react-use-keypress";
 
-let images = [
-  "./images/karate-1.jpg",
-  "./images/karate-2.jpg",
-  "./images/karate-3.jpg",
-  "./images/karate-1.jpg?",
-  "./images/karate-2.jpg?",
-  "./images/karate-3.jpg?",
-];
+interface CarouselProps {
+  images: any;
+  runIndex: number;
+}
 
 let collapsedAspectRatio = 1 / 3;
 let fullAspectRatio = 3 / 2;
 let gap = 2;
 let margin = 12;
 
-export default function Carousel() {
-  let [index, setIndex] = useState(0);
-
-  console.log(images);
+export default function Carousel({ images, runIndex }: CarouselProps) {
+  let [index, setIndex] = useState(runIndex);
 
   useKeypress("ArrowRight", () => {
     if (index + 1 < images.length) {
@@ -44,8 +38,8 @@ export default function Carousel() {
             >
               {images.map((image, i) => (
                 <motion.img
-                  key={image}
-                  src={image}
+                  key={image.src}
+                  src={image.src}
                   animate={{ opacity: i === index ? 1 : 0.3 }}
                   className="aspect-[3/2] object-contain "
                 />
@@ -118,7 +112,7 @@ export default function Carousel() {
                   }}
                 >
                   <motion.img
-                    src={image}
+                    src={image.src}
                     className="h-full object-cover w-full"
                   />
                 </motion.button>
