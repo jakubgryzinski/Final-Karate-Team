@@ -5,8 +5,18 @@ import Karate1 from "../assets/images/karate-1.jpg";
 import Karate2 from "../assets/images/karate-2.jpg";
 import Karate3 from "../assets/images/karate-3.jpg";
 import Carousel from "../components/Carousel"
+import { atom } from 'nanostores'
 
 let images = [
+  Karate1,
+  Karate2,
+  Karate3,
+  Karate1,
+  Karate2,
+  Karate3,
+  Karate1,
+  Karate2,
+  Karate3,
   Karate1,
   Karate2,
   Karate3,
@@ -16,6 +26,6 @@ let images = [
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
     <Gallery/>
-    <Carousel client:only images={images} runIndex={1}/>
+    <Carousel client:only images={images} runIndex={1} />
   </main>
 </Layout>
