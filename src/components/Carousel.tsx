@@ -64,7 +64,7 @@ export default function Carousel({ images, runIndex }: CarouselProps) {
                   key={image.src}
                   src={image.src}
                   animate={{ opacity: i === index ? 1 : 0.3 }}
-                  className="aspect-[3/2] object-contain "
+                  className="aspect-[3/2] object-contain"
                 />
               ))}
             </motion.div>
@@ -99,7 +99,7 @@ export default function Carousel({ images, runIndex }: CarouselProps) {
             </AnimatePresence>
           </div>
 
-          <div className="absolute inset-x-0 bottom-6 flex justify-center overflow-hidden">
+          <div className="absolute inset-x-0 -bottom-16 flex justify-center overflow-hidden ">
             <motion.div
               initial={false}
               animate={{
