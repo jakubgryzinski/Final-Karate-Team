@@ -25,7 +25,7 @@ let images = [
 
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
-    <Gallery/>
+    <Gallery images={images}/>
     <Carousel client:only images={images} runIndex={1}/>
   </main>
 </Layout>
