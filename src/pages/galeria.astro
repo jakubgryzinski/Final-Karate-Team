@@ -1,66 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Gallery from "../components/gallery.astro";
-import Karate1 from "../assets/images/karate-1.jpg";
-import Karate2 from "../assets/images/karate-2.jpg";
-import Karate3 from "../assets/images/karate-3.jpg";
 import Carousel from "../components/Carousel"
+import {images} from "../assets/items/images.astro"
 import { $isOpen } from "../store"
 
-let images = [
-{
-    id: 0,
-    image: Karate1,
-  },
-  {
-    id: 1,
-    image: Karate1,
-  },
-  {
-    id: 2,
-    image: Karate2,
-  },
-  {
-    id: 3,
-    image: Karate3,
-  },
-  {
-    id: 4,
-    image: Karate2,
-  },
-  {
-    id: 5,
-    image: Karate1,
-  },
-  {
-    id: 6,
-    image: Karate3,
-  },
-  {
-    id: 7,
-    image: Karate3,
-  },
-  {
-    id: 8,
-    image: Karate2,
-  },
-  {
-    id: 9,
-    image: Karate2,
-  },
-  {
-    id: 10,
-    image: Karate3,
-  },
-  {
-    id: 11,
-    image: Karate2,
-  },
-  {
-    id: 12,
-    image: Karate1,
-  },
-];
 ---
 
 
