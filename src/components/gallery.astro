@@ -14,6 +14,7 @@ import Karate3 from "../assets/images/karate-3.jpg";
     <div class="w-full aspect-[4/3]">
       <Image
         alt="wv"
+        id="openDialog"
         src={Karate1}
         class="w-full h-full object-cover rounded-xl cursor-pointer"
       />
@@ -104,3 +105,10 @@ import Karate3 from "../assets/images/karate-3.jpg";
     >
   </span>
 </section>
+
+
+<script>
+  import { $isOpen, setIsOpen } from '../store.js';
+
+  document.getElementById('openDialog').addEventListener('click', setIsOpen);
+</script>
