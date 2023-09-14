@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import useKeypress from "react-use-keypress";
 import { useStore } from "@nanostores/react";
-import { $isOpen } from "../store";
+import { $isOpen, $index } from "../store";
 
 interface CarouselProps {
   images: any;
-  runIndex: number;
 }
 
 let collapsedAspectRatio = 1 / 3;
@@ -14,10 +13,16 @@ let fullAspectRatio = 3 / 2;
 let gap = 2;
 let margin = 12;
 
-export default function Carousel({ images, runIndex }: CarouselProps) {
-  let [index, setIndex] = useState(runIndex);
+export default function Carousel({ images }: CarouselProps) {
+  let [index, setIndex] = useState(0);
 
   const isOpen = useStore($isOpen);
+
+  useEffect(() => {
+    if ($index.value) {
+      setIndex($index.value);
+    }
+  }, [isOpen]);
 
   useKeypress("ArrowRight", () => {
     if (index + 1 < images.length) {
@@ -59,9 +64,9 @@ export default function Carousel({ images, runIndex }: CarouselProps) {
               animate={{ x: `-${index * 100}%` }}
               className="flex  aspect-[3/2]"
             >
-              {images.map((image, i) => (
+              {images.map(({ image }, i) => (
                 <motion.img
-                  key={image.src}
+                  key={i}
                   src={image.src}
                   animate={{ opacity: i === index ? 1 : 0.3 }}
                   className="aspect-[3/2] object-contain"
@@ -112,9 +117,9 @@ export default function Carousel({ images, runIndex }: CarouselProps) {
               style={{ aspectRatio: fullAspectRatio, gap: `${gap}%` }}
               className="flex h-14"
             >
-              {images.map((image, i) => (
+              {images.map(({ image }, i) => (
                 <motion.button
-                  key={image}
+                  key={i}
                   onClick={() => setIndex(i)}
                   whileHover={{ opacity: 1 }}
                   initial={false}

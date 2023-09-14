@@ -13,8 +13,9 @@ const { images } = Astro.props;
   <div
     class="w-full grid 2xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-8 mt-12"
   >
- {images.map(image => (
-  <div class="w-full aspect-[4/3]">
+ {
+images.map(({image, id}) => (
+  <div class="w-full aspect-[4/3] item" key={id} id={id}>
       <Image
         alt="wv"
         id="openDialog"
@@ -24,6 +25,7 @@ const { images } = Astro.props;
     </div>
   ))
  }
+ </div>
   <span class="block text-xl text-gray-400 md:text-center mt-16 px-8 md:p-0">
     <a
       href="https://www.facebook.com/karateteamoborniki/photos"
@@ -35,7 +37,19 @@ const { images } = Astro.props;
 
 
 <script>
-  import { $isOpen, setIsOpen } from '../store.js';
 
-  document.getElementById('openDialog').addEventListener('click', setIsOpen);
+  import { $index, setIndex, $isOpen, setIsOpen } from "../store"
+
+  const items = document.getElementsByClassName('item');
+
+  const itemsArray = [...items];
+
+
+  itemsArray.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      setIsOpen()
+      setIndex( parseInt(item.id))
+  });
+    
+})
 </script>
