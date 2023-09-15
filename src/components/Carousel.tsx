@@ -20,7 +20,7 @@ export default function Carousel({ images }: CarouselProps) {
 
   useEffect(() => {
     if ($index.value) {
-      setIndex($index.value);
+      setIndex($index.value - 1);
     }
   }, [isOpen]);
 

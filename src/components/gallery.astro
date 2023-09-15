@@ -17,7 +17,7 @@ const { images } = Astro.props;
 images.map(({image, id}) => (
   <div class="w-full aspect-[4/3] item" key={id} id={id}>
       <Image
-        alt="wv"
+        alt="image"
         id="openDialog"
         src={image}
         class="w-full h-full object-cover rounded-xl cursor-pointer"
@@ -47,8 +47,9 @@ images.map(({image, id}) => (
 
   itemsArray.forEach((item) => {
     item.addEventListener('click', (event) => {
-      setIsOpen()
+      $isOpen.set(true);
       setIndex( parseInt(item.id))
+
   });
     
 })
