@@ -14,8 +14,8 @@ const { images } = Astro.props;
     class="w-full grid 2xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-8 mt-12"
   >
  {
-images.map(({image, id}) => (
-  <div class="w-full aspect-[4/3] item" key={id} id={id}>
+images.map(({image}, i) => (
+  <div class="w-full aspect-[4/3] item" key={i} id={i + 1}>
       <Image
         alt="image"
         id="openDialog"
