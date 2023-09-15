@@ -51,7 +51,21 @@ export default function Carousel({ images }: CarouselProps) {
         }`}
         onClick={() => $isOpen.set(false)}
       >
-        Close
+        <svg
+          className="text-light hover:text-gray-300"
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
       <div
         className={`max-w-7xl bg-black z-50 fixed top-1/2  transform -translate-y-1/2 ${
@@ -83,7 +97,20 @@ export default function Carousel({ images }: CarouselProps) {
                   className="absolute left-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white"
                   onClick={() => setIndex(index - 1)}
                 >
-                  Left
+                  <svg
+                    className="text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
                 </motion.button>
               )}
             </AnimatePresence>
@@ -98,7 +125,20 @@ export default function Carousel({ images }: CarouselProps) {
                   className="absolute right-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white"
                   onClick={() => setIndex(index + 1)}
                 >
-                  Right
+                  <svg
+                    className="text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
                 </motion.button>
               )}
             </AnimatePresence>
