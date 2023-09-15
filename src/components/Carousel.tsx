@@ -36,6 +36,10 @@ export default function Carousel({ images }: CarouselProps) {
     }
   });
 
+  useKeypress("Escape", () => {
+    $isOpen.set(false);
+  });
+
   return (
     <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
       <div
