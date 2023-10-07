@@ -15,7 +15,7 @@ const { images } = Astro.props;
   >
  {
 images.map(({image}, i) => (
-  <div class="w-full aspect-[4/3] item" key={i} id={i + 1}>
+  <div class="w-full aspect-[4/3] item" id={i + 1}>
       <Image
         alt="image"
         id="openDialog"
@@ -38,7 +38,7 @@ images.map(({image}, i) => (
 
 <script>
 
-  import { $index, setIndex, $isOpen, setIsOpen } from "../store"
+  import {  setIndex, $isOpen } from "../store"
 
   const items = document.getElementsByClassName('item');
 
