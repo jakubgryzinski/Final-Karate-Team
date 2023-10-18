@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Instructors from "../components/Instructors.astro";
+import {items} from "../assets/items/instructors.astro"
 ---
 
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
-    <Instructors />
+    <Instructors Items={items}/>
   </main>
 </Layout>
