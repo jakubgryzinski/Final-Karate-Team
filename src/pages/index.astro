@@ -1,51 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Karate from "../assets/images/karate-1.jpg";
 import Features from "../components/Features.astro";
-import { Image } from "astro:assets";
+import Section from "../components/Section.astro";
+import { HomeItems } from "../assets/items/home.astro"
 ---
 
 <Layout title="Karate Team Oborniki">
   <main>
     <Hero />
     <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12 my-32 m-auto">
-      <div class={`flex flex-col-reverse md:flex-row-reverse`}>
-        <div class="xl:w-5/12 md:w-6/12 w-full lg:p-16 md:p-10 p-0 px-4 py-8 gap-6 flex flex-col">
-          <h1 class="text-4xl font-bold text-light ml-2">Instruktorzy</h1>
-          <p class="text-light xl:text-xl text-lg">
-            Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.
-            The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
-            It usually begins with
-          </p>
-        </div>
-        <div class="xl:w-7/12 md:w-6/12 w-full h-full flex justify-center items-center overflow-hidden">
-          <Image
-          alt="image"
-          class="rounded-lg"
-          src={Karate}
-          />
-        </div>
-      </div>
+      <Section title={HomeItems[0].title} paragraph={HomeItems[0].paragraph} image={HomeItems[0].image} i={0}/>
     </section>
    <Features/>
-    <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12 my-16 m-auto">
-      <div class={`flex flex-col-reverse md:flex-row `}>
-        <div class="xl:w-5/12 md:w-6/12 w-full lg:p-16 md:p-10 p-0 px-4 py-8 gap-6 flex flex-col">
-          <h1 class="text-4xl font-bold text-light ml-2">Instruktorzy</h1>
-          <p class="text-light xl:text-xl text-lg">
-            Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.
-            The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
-            It usually begins with
-          </p>
-        </div>
-        <div class="xl:w-7/12 md:w-6/12 w-full h-full flex justify-center items-center overflow-hidden">
-          <Image
-          alt="image"
-          class="rounded-lg"
-          src={Karate}/>
-        </div>
-      </div>
-    </section>
+   <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12 my-32 m-auto">
+    <Section title={HomeItems[1].title} paragraph={HomeItems[1].paragraph} image={HomeItems[1].image} i={1}/>
+  </section>
   </main>
 </Layout>

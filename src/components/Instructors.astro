@@ -1,28 +1,12 @@
 ---
-import { Image } from "astro:assets";
+import Section from "./Section.astro";
 const { Items } = Astro.props;
 ---
-
 
 <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12">
     {
       Items.map((item, i) => (
-        <div class={`flex flex-col-reverse md:flex-row ${
-          i % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-        }`}>
-          <div class="xl:w-5/12 md:w-6/12 w-full lg:p-16 md:p-10 p-0 px-4 py-8 gap-6 flex flex-col">
-            <h1 class="text-4xl font-bold text-light ml-2">{item.title}</h1>
-              <p class="text-light xl:text-xl text-lg">
-                {item.paragraph}
-              </p>
-          </div>
-          <div class="xl:w-7/12 md:w-6/12 w-full h-full flex justify-center items-center overflow-hidden">
-            <Image
-              alt="image"
-              class="rounded-lg"
-              src={item.image}/>
-          </div>
-        </div>
+        <Section title={item.title} paragraph={item.paragraph} image={item.image} i={i}/>
       ))
     }
 </section>
