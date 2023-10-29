@@ -1,6 +1,6 @@
 <button
     id="button"
-    class={`md:hidden inline-flex items-center w-10 h-10 justify-center text-sm  rounded-lg  transition-all text-light`}
+    class={`md:hidden inline-flex items-center w-10 h-10 justify-center text-sm  rounded-lg  text-light`}
     data-collapse-toggle="navbar-default"
     type="button"
     aria-controls="navbar-default"
@@ -25,36 +25,35 @@
 </button>
 <div
     id="menu"
-    class={`w-full px-2 top-20 left-0 z-40 hidden`}
+    class={`w-full px-2 top-20 left-0 z-0 hidden`}
 >
-    <ul class="font-medium flex flex-col p-4 md:p-0 mt-2 rounded-lg bg-black/60  ">
-    <li>
-        <a
-        href="/instruktorzy"
-        class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/30 "
-        >
-        Instruktorzy
-        </a>
-    </li>
-    <li>
-        <a
-        href="/galeria"
-        class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/30"
-        >
-        Galeria
-        </a>
-    </li>
-    <li>
-        <a
-        href="/kontakt"
-        class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/30 "
-        >
-        Kontakt
-        </a>
-    </li>
+    <ul class="font-medium flex flex-col p-4 md:p-0 mt-2 rounded-lg bg-white/10 backdrop-blur-md tracking-wide">
+        <li>
+            <a
+            href="/instruktorzy"
+            class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/20 "
+            >
+            Instruktorzy
+            </a>
+        </li>
+        <li>
+            <a
+            href="/galeria"
+            class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/20"
+            >
+            Galeria
+            </a>
+        </li>
+        <li>
+            <a
+            href="/kontakt"
+            class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/20 "
+            >
+            Kontakt
+            </a>
+        </li>
     </ul>
 </div>
-
 
 <script>
 
