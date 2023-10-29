@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import LogoImage from "../assets/images/logo.jpeg";
 import SocialsIcons from "./SocialsIcons.astro";
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "./MobileMenu.astro";
 ---
 
 <nav
@@ -30,5 +30,5 @@ import MobileMenu from "./MobileMenu";
   <span class="md:flex hidden">
     <SocialsIcons />
   </span>
-  <MobileMenu client:idle />
+  <MobileMenu />
 </nav>
