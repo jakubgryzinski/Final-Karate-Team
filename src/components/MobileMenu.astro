@@ -32,30 +32,16 @@ import { NavigationItems } from "../assets/items/navigation.astro";
     class={`w-full px-2 top-20 left-0 z-0 hidden`}
 >
     <ul class="font-medium flex flex-col p-4 md:p-0 mt-2 rounded-lg bg-white/10 backdrop-blur-md tracking-wide">
+        {NavigationItems.map(({href, title}) => (
         <li>
             <a
-            href="/instruktorzy"
+            href={href}
             class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/20 "
             >
-            Instruktorzy
+                {title}
             </a>
-        </li>
-        <li>
-            <a
-            href="/galeria"
-            class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/20"
-            >
-            Galeria
-            </a>
-        </li>
-        <li>
-            <a
-            href="/kontakt"
-            class="block py-2 pl-3 pr-4 rounded text-light hover:bg-black/20 "
-            >
-            Kontakt
-            </a>
-        </li>
+        </li>    
+        ))}
     </ul>
 </div>
 
