@@ -8,6 +8,7 @@ const { images } = Astro.props;
   <h1 class="text-center text-light text-5xl font-bold animate-in">Galeria</h1>
   <div
     class="w-full grid 2xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-8 mt-12 animate-in"
+    style="animation-delay: 0.3s;"
   >
  {
 images.map(({image}, i) => (
