@@ -18,10 +18,15 @@ module.exports = {
 				  "0%": { transform: "translateY(-18px)", opacity: 0 },
 				  "100%": { transform: "translateY(0px)", opacity: 1 },
 				},
+				"fade-in": {
+					"0%": { transform: "scale(1.05)", opacity: 0.5 },
+					"100%": { transform: "scale(1)", opacity: 1 },
+				}
 			  },
 			  animation: {
 				in: "in .6s both",
 				"in-reverse": "in-reverse .6s both",
+				"fade-in": "fade-in 1s both",
 			  },
 		},
 	},
