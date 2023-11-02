@@ -7,10 +7,10 @@ const { title, paragraph, image, i } = Astro.props;
     i % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
 }`}>
     <div class="xl:w-5/12 md:w-6/12 w-full lg:p-16 md:p-10 p-0 px-4 py-8 gap-6 flex flex-col">
-        <h1 class="text-4xl md:text-3xl font-bold text-light ml-2">{title}</h1>
-        <p class="text-gray-400 xl:text-md text-lg">{paragraph}</p>
+        <h1 class="text-4xl md:text-3xl font-bold text-light ml-2 animate-in">{title}</h1>
+        <p class="text-gray-400 xl:text-md text-lg animate-in">{paragraph}</p>
     </div>
-    <div class="xl:w-7/12 md:w-6/12 w-full h-full flex justify-center items-center overflow-hidden">
+    <div class="xl:w-7/12 md:w-6/12 w-full h-full flex justify-center items-center overflow-hidden animate-in">
         <Image
                 alt="image"
                 class="rounded-lg"
