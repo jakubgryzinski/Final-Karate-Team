@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import HeroImage from "../assets/images/hero.jpg";
 import Button from "./Button.astro";
 
 const { image, title, button, href  } = Astro.props;
@@ -23,11 +22,12 @@ const { image, title, button, href  } = Astro.props;
     >
       {title}
     </h1>
-    <div 
+    <a
+      href={href} 
       class="md:mt-16 md:ml-20 mt-20 ml-4 animate-in"
       style="animation-delay: 0.6s;"
     >
       <Button title={button} />
-    </div>
+    </a>
   </header>
 </section>
