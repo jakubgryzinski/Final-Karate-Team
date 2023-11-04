@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 const { image, title, button, href  } = Astro.props;
 ---
 
-<section class="relative w-full h-screen">
+<section class="relative w-full h-screen overflow-hidden">
   <Image
     src={image}
     alt="Hero Image"
