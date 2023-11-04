@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Gallery from "../components/gallery.astro";
 import Carousel from "../components/Carousel"
-import {images} from "../assets/items/images.astro"
+import {GalleryItems} from "../assets/items/GalleryItems.astro"
 import { $isOpen } from "../store"
 
 ---
@@ -11,8 +11,8 @@ import { $isOpen } from "../store"
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
     {$isOpen ? (
-      <Gallery images={images}/>
+      <Gallery images={GalleryItems}/>
     ) : null}
-    <Carousel client:only images={images}/>
+    <Carousel client:only images={GalleryItems}/>
   </main>
 </Layout>

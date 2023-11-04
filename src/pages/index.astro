@@ -3,13 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Features from "../components/Features.astro";
 import Section from "../components/Section.astro";
-import { HomeItems } from "../assets/items/home.astro"
-import { heroItems } from "../assets/items/HeroItems.astro"
+import { HomeItems } from "../assets/items/HomeItems.astro"
+import { HeroItems } from "../assets/items/HeroItems.astro"
 ---
 
 <Layout title="Karate Team Oborniki">
   <main>
-    <Hero image={heroItems.image} title={heroItems.title} button={heroItems.button} href={heroItems.href} />
+    <Hero image={HeroItems.image} title={HeroItems.title} button={HeroItems.button} href={HeroItems.href} />
     <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12 my-32 m-auto">
       <Section title={HomeItems[0].title} paragraph={HomeItems[0].paragraph} image={HomeItems[0].image} i={0}/>
     </section>
