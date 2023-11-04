@@ -1,4 +1,16 @@
 ---
+interface Props {
+    items: {
+        title: string,
+        paragraph: string,
+        features: Array<{
+            title: string,
+            paragraph: string,
+            icon: string
+        }>
+    }
+}
+
 const { items } = Astro.props;
 import Icon from "./Icon.astro"
 
@@ -8,17 +20,17 @@ import Icon from "./Icon.astro"
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div class="max-w-screen-md mb-8 lg:mb-16">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-light">{items.title}</h2>
-            <p class="text-gray-400 sm:text-xl">{items.description}</p>
+            <p class="text-gray-400 sm:text-xl">{items. paragraph}</p>
         </div>
         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             {
-                items.features.map(({icon, title, description}) => (
+                items.features.map(({icon, title,  paragraph}) => (
                     <div>
                         <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                             <Icon icon={icon}/>
                         </div>
                         <h3 class="mb-2 text-xl font-bold text-light">{title}</h3>
-                        <p class="text-gray-400">{description}</p>
+                        <p class="text-gray-400">{ paragraph}</p>
                     </div>
                 ))
             }

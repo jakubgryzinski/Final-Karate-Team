@@ -1,5 +1,14 @@
 ---
 import Section from "./Section.astro";
+
+interface Props {
+  Items: Array<{
+    title: string,
+    paragraph: string,
+    image: ImageMetadata,
+  }>
+}
+
 const { Items } = Astro.props;
 ---
 
