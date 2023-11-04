@@ -7,7 +7,7 @@ interface Props {
     }>
 }
 
-const { images } = Astro.props;
+const { images } = Astro.props as Props;
 ---
 
 
@@ -19,7 +19,7 @@ const { images } = Astro.props;
   >
  {
 images.map(({image}, i) => (
-  <div class="w-full aspect-[4/3] item " id={i + 1}>
+  <div id={(i + 1).toString()} class="w-full aspect-[4/3] item ">
       <Image
         alt="image"
         id="openDialog"

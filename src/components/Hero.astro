@@ -9,7 +9,7 @@ interface Props {
     href: string
 }
 
-const { image, title, button, href  } = Astro.props;
+const { image, title, button, href  } = Astro.props as Props;
 ---
 
 <section class="relative w-full h-screen overflow-hidden">
