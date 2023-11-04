@@ -1,0 +1,10 @@
+---
+
+export interface Props {
+  icon: any;
+}
+
+const { icon } = Astro.props as Props;
+---
+
+<Fragment set:html={icon} />
