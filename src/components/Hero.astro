@@ -2,19 +2,15 @@
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
 
-interface Props {
-    image: ImageMetadata,
-    title: string,
-    button: string,
-    href: string
-}
 
-const { image, title, button, href  } = Astro.props as Props;
+const { image, title, button, href  } = Astro.props;
 ---
 
 <section class="relative w-full h-screen overflow-hidden">
   <Image
-    src={image}
+    src={image.url}
+    width={image.width}
+    height={image.height}
     alt="Hero Image"
     class="h-screen object-cover absolute top-0 left-0 w-full z-0 animate-fade-in"
   />
