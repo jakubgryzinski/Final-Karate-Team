@@ -2,9 +2,14 @@
 import { Image } from "astro:assets";
 
 interface Props {
-    images: Array <{
-      image: ImageMetadata
-    }>
+  images: Array <{
+    alt: string,
+    photo: {
+      url: ImageMetadata,
+      width: number,
+      height: number,
+    }
+  }>
 }
 
 const { images } = Astro.props as Props;
@@ -18,12 +23,14 @@ const { images } = Astro.props as Props;
     style="animation-delay: 0.3s;"
   >
  {
-images.map(({image}, i) => (
+images.map(({photo, alt}, i) => (
   <div id={(i + 1).toString()} class="w-full aspect-[4/3] item ">
       <Image
-        alt="image"
+        alt={alt}
         id="openDialog"
-        src={image}
+        src={photo.url}
+        width={photo.width}
+        height={photo.height}
         class="w-full h-full object-cover rounded-xl cursor-pointer"
       />
     </div>

@@ -8,6 +8,7 @@ interface CarouselProps {
   images: any;
 }
 
+
 let collapsedAspectRatio = 1 / 3;
 let fullAspectRatio = 3 / 2;
 let gap = 2;
@@ -15,6 +16,8 @@ let margin = 12;
 
 export default function Carousel({ images }: CarouselProps) {
   let [index, setIndex] = useState(0);
+
+  console.log(images)
 
   const isOpen = useStore($isOpen);
 
@@ -82,10 +85,10 @@ export default function Carousel({ images }: CarouselProps) {
               animate={{ x: `-${index * 100}%` }}
               className="flex  aspect-[3/2]"
             >
-              {images.map(({ image }, i) => (
+              {images.map(({ photo }, i) => (
                 <motion.img
                   key={i}
-                  src={image.src}
+                  src={photo.url}
                   animate={{ opacity: i === index ? 1 : 0.3 }}
                   className="aspect-[3/2] object-contain"
                 />
@@ -161,7 +164,7 @@ export default function Carousel({ images }: CarouselProps) {
               style={{ aspectRatio: fullAspectRatio, gap: `${gap}%` }}
               className="flex h-14"
             >
-              {images.map(({ image }, i) => (
+              {images.map(({ photo }, i) => (
                 <motion.button
                   key={i}
                   onClick={() => setIndex(i)}
@@ -184,7 +187,7 @@ export default function Carousel({ images }: CarouselProps) {
                   }}
                 >
                   <motion.img
-                    src={image.src}
+                    src={photo.url}
                     className="h-full object-cover w-full"
                   />
                 </motion.button>
