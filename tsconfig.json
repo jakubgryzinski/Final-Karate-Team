@@ -2,11 +2,11 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "jsxImportSource": "react"
   },
   "include": [
     "src/**/*.ts",
-    "types/**/*.d.ts" // Dodaj ten wpis
+    "types/**/*.d.ts"
   ]
 }

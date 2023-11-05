@@ -4,12 +4,37 @@ import Gallery from "../components/gallery.astro";
 import Carousel from "../components/Carousel"
 import {GalleryItems} from "../assets/items/GalleryItems.astro"
 import { $isOpen } from "../store"
+import { Debug } from 'astro:components';
 
+const response = await fetch('https://graphql.datocms.com/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    Authorization: `Bearer ${import.meta.env.DATOCMS_API_KEY}`,
+  },
+  body: JSON.stringify({
+    query: `query galleryPage {
+      allGalleries {
+        id
+        alt
+        photo {
+          url
+        }
+      }
+    }
+      `,
+  }),
+});
+
+const json = await response.json();
+const data = json.data.allGalleries;
 ---
 
 
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
+    <Debug answer={data} />
     {$isOpen ? (
       <Gallery images={GalleryItems}/>
     ) : null}
