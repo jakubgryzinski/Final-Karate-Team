@@ -1,14 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
-interface Props {
-    title: string,
-    paragraph: string,
-    image: ImageMetadata,
-    i: number
-}
 
-const { title, paragraph, image, i } = Astro.props as Props;
+const { title, description, image, i } = Astro.props;
 ---
 
 <div class={`flex flex-col-reverse md:flex-row animate-in ${
@@ -17,13 +11,15 @@ const { title, paragraph, image, i } = Astro.props as Props;
  style={`animation-delay: ${i * 0.3}s`}>
     <div class="xl:w-5/12 md:w-6/12 w-full lg:p-16 md:p-10 p-0 px-4 py-8 gap-6 flex flex-col">
         <h1 class="text-4xl md:text-3xl font-bold text-light ml-2">{title}</h1>
-        <p class="text-gray-400 xl:text-md text-lg">{paragraph}</p>
+        <p class="text-gray-400 xl:text-md text-lg">{description}</p>
     </div>
     <div class="xl:w-7/12 md:w-6/12 w-full h-full flex justify-center items-center overflow-hidden">
         <Image
                 alt="image"
                 class="rounded-lg"
-                src={image}
+                src={image.url}
+                width={image.width}
+                height={image.height}
         />
     </div>
 </div>

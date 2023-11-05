@@ -1,21 +1,13 @@
 ---
 import Section from "./Section.astro";
-
-interface Props {
-  Items: Array<{
-    title: string,
-    paragraph: string,
-    image: ImageMetadata,
-  }>
-}
-
-const { Items } = Astro.props as Props;
+const { Items } = Astro.props ;
+const instructors = Items[0].instructorModule
 ---
 
 <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12">
     {
-      Items.map((item, i) => (
-        <Section title={item.title} paragraph={item.paragraph} image={item.image} i={i}/>
+      instructors.map((item, i) => (
+        <Section title={item.title} description={item.description} image={item.photo} i={i}/>
       ))
     }
 </section>
