@@ -1,41 +1,59 @@
 ---
-interface Props {
-    items: {
-        title: string,
-        paragraph: string,
-        features: Array<{
-            title: string,
-            paragraph: string,
-            icon: string
-        }>
-    }
-}
-
-const { items } = Astro.props as Props;
+const { cms } = Astro.props;
 import Icon from "./Icon.astro"
 
+const Items = [
+    {
+        icon: cms.iconOne,
+        title: cms.titleOne,
+        description: cms.descriptionOne,
+    },
+    {
+        icon: cms.iconTwo,
+        title: cms.titleTwo,
+        description: cms.descriptionTwo,
+    },
+    {
+        icon: cms.iconThree,
+        title: cms.titleThree,
+        description: cms.descriptionThree,
+    },
+    {
+        icon: cms.iconFour,
+        title: cms.titleFour,
+        description: cms.descriptionFour,
+    },
+    {
+        icon: cms.iconFive,
+        title: cms.titleFive,
+        description: cms.descriptionFive,
+    },
+    {
+        icon: cms.iconSix,
+        title: cms.titleSix,
+        description: cms.descriptionSix,
+    },
+]
 ---
 
 <section class="backdrop-blur-md tracking-wide bg-white/5">
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div class="max-w-screen-md mb-8 lg:mb-16">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-light">{items.title}</h2>
-            <p class="text-gray-400 sm:text-xl">{items. paragraph}</p>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-light">{cms.title}</h2>
+            <p class="text-gray-400 sm:text-xl">{cms. paragraph}</p>
         </div>
         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             {
-                items.features.map(({icon, title,  paragraph}) => (
+                Items.map(({icon, title,  description}) => (
                     <div>
                         <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                             <Icon icon={icon}/>
                         </div>
                         <h3 class="mb-2 text-xl font-bold text-light">{title}</h3>
-                        <p class="text-gray-400">{ paragraph}</p>
+                        <p class="text-gray-400">{ description}</p>
                     </div>
                 ))
             }
         </div>
     </div>
 </section>
-
-
