@@ -1,5 +1,10 @@
 ---
-const { cms } = Astro.props;
+interface Props {
+    cms: {
+        [key: string]: string;
+    }
+}
+const { cms } = Astro.props as Props;
 import Icon from "./Icon.astro"
 
 const Items = [
