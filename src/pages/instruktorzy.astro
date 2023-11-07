@@ -32,10 +32,12 @@ const response = await fetch('https://graphql.datocms.com/', {
 
 const json = await response.json();
 const data = json.data.allInstructors;
+
+const instructors = data[0].instructorModule
 ---
 
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
-    <Instructors Items={data}/>
+    <Instructors Items={instructors}/>
   </main>
 </Layout>
