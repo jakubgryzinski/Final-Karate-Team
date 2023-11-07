@@ -5,8 +5,8 @@ const { Items } = Astro.props ;
 
 <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12">
     {
-      Items.map((item, i) => (
-        <Section title={item.title} description={item.description} image={item.photo} alt="alt" i={i}/>
+      Items.map(({title, description, photo, alt}, i) => (
+        <Section title={title} description={description} image={photo} alt={alt} i={i}/>
       ))
     }
 </section>
