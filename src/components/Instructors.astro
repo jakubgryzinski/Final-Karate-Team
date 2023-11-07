@@ -12,7 +12,6 @@ interface Props {
   }>
 }
 
-
 import Section from "./Section.astro";
 const { Items } = Astro.props as Props;
 ---
@@ -20,7 +19,7 @@ const { Items } = Astro.props as Props;
 <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12">
     {
       Items.map(({title, description, photo, alt}, i) => (
-        <Section title={title} description={description} image={photo} alt={alt} i={i}/>
+        <Section title={title} description={description} photo={photo} alt={alt} i={i}/>
       ))
     }
 </section>
