@@ -3,7 +3,7 @@ interface Props {
     title: string,
     button: string,
     href: string,
-    photo: {
+    image: {
       url: ImageMetadata,
       width: number,
       height: number,
@@ -13,14 +13,14 @@ interface Props {
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
 
-const { photo, title, button, href  } = Astro.props;
+const { image, title, button, href  } = Astro.props;
 ---
 
 <section class="relative w-full h-screen overflow-hidden">
   <Image
-    src={photo.url}
-    width={photo.width}
-    height={photo.height}
+    src={image.url}
+    width={image.width}
+    height={image.height}
     alt="Hero Image"
     class="h-screen object-cover absolute top-0 left-0 w-full z-0 animate-fade-in"
   />

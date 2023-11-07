@@ -4,7 +4,7 @@ interface Props {
     description: string,
     alt: string,
     i: number,
-    photo: {
+    image: {
       url: ImageMetadata,
       width: number,
       height: number,
@@ -13,7 +13,7 @@ interface Props {
 
 import { Image } from "astro:assets";
 
-const { title, description, alt, i, photo } = Astro.props as Props;
+const { title, description, alt, i, image } = Astro.props as Props;
 ---
 
 <div class={`flex flex-col-reverse md:flex-row animate-in ${
@@ -28,9 +28,9 @@ const { title, description, alt, i, photo } = Astro.props as Props;
         <Image
                 alt={alt}
                 class="rounded-lg"
-                src={photo.url}
-                width={photo.width}
-                height={photo.height}
+                src={image.url}
+                width={image.width}
+                height={image.height}
         />
     </div>
 </div>
