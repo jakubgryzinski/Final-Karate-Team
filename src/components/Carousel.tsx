@@ -85,10 +85,10 @@ export default function Carousel({ images }: CarouselProps) {
               animate={{ x: `-${index * 100}%` }}
               className="flex  aspect-[3/2]"
             >
-              {images.map(({ photo }, i) => (
+              {images.map(({image }, i) => (
                 <motion.img
                   key={i}
-                  src={photo.url}
+                  src={image.url}
                   animate={{ opacity: i === index ? 1 : 0.3 }}
                   className="aspect-[3/2] object-contain"
                 />
@@ -164,7 +164,7 @@ export default function Carousel({ images }: CarouselProps) {
               style={{ aspectRatio: fullAspectRatio, gap: `${gap}%` }}
               className="flex h-14"
             >
-              {images.map(({ photo }, i) => (
+              {images.map(({ image }, i) => (
                 <motion.button
                   key={i}
                   onClick={() => setIndex(i)}
@@ -187,7 +187,7 @@ export default function Carousel({ images }: CarouselProps) {
                   }}
                 >
                   <motion.img
-                    src={photo.url}
+                    src={image.url}
                     className="h-full object-cover w-full"
                   />
                 </motion.button>

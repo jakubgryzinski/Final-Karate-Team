@@ -4,7 +4,7 @@ interface Props {
     title: string,
     description: string,
     alt: string,
-    photo: {
+    image: {
       url: ImageMetadata,
       width: number,
       height: number,
@@ -18,8 +18,8 @@ const { Items } = Astro.props as Props;
 
 <section class="2xl:max-w-screen-2xl w-full xl:px-4 px-8 flex flex-col md:gap-36  gap-12">
     {
-      Items.map(({title, description, photo, alt}, i) => (
-        <Section title={title} description={description} image={photo} alt={alt} i={i}/>
+      Items.map(({title, description, image, alt}, i) => (
+        <Section title={title} description={description} image={image} alt={alt} i={i}/>
       ))
     }
 </section>
