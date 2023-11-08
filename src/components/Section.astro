@@ -24,13 +24,13 @@ const { title, description, alt, i, image } = Astro.props as Props;
         <h1 class="text-4xl md:text-3xl font-bold text-light ml-2">{title}</h1>
         <p class="text-gray-400 xl:text-md text-lg">{description}</p>
     </div>
-    <div class="xl:w-7/12 md:w-6/12 w-full h-full flex justify-center items-center overflow-hidden">
+    <div class="xl:w-7/12 md:w-6/12 e w-full h-full flex justify-center items-center overflow-hidden">
         <Image
-                alt={alt}
-                class="rounded-lg"
-                src={image.url}
-                width={image.width}
-                height={image.height}
+            alt={alt}
+            class="rounded-lg aspect-[16/11] object-cover"
+            src={image.url}
+            width={image.width}
+            height={image.height}
         />
     </div>
 </div>
