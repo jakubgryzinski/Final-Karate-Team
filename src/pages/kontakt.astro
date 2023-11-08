@@ -1,10 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Contact from "../components/Contact.astro";
+
+const response = await fetch('https://graphql.datocms.com/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    Authorization: `Bearer ${import.meta.env.DATOCMS_API_KEY}`,
+  },
+  body: JSON.stringify({
+    query: `query InstructorsPage {
+              allContacts {
+                address
+                email
+                phone
+              }
+            }
+      `,
+  }),
+});
+
+const json = await response.json();
+const data = json.data.allContacts[0];
 ---
 
 <Layout title="Karate Team Oborniki">
   <main class="min-h-screen flex justify-center md:pt-44 md:pb-20 py-28">
-    <Contact />
+    <Contact items={data}/>
   </main>
 </Layout>

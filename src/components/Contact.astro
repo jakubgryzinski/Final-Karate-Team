@@ -1,10 +1,11 @@
 ---
 import SocialsIcons from "./SocialsIcons.astro";
-import { ContactItems } from "../assets/items/ContactItems.astro";
 import Icon from "./Icon.astro";
 import AddressIcon from "../assets/icons/address.svg?raw"
 import EmailIcon from "../assets/icons/email.svg?raw"
 import PhoneIcon from "../assets/icons/phone.svg?raw"
+
+const { items } = Astro.props;
 ---
 
 <section
@@ -19,22 +20,22 @@ import PhoneIcon from "../assets/icons/phone.svg?raw"
           href="/"
           class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
-          <Icon icon={AddressIcon}/>
-          {ContactItems.address}
+        <Icon icon={AddressIcon}/>
+          {items.address}
         </a>
         <a
           href="/"
           class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
         <Icon icon={EmailIcon}/>
-            {ContactItems.email}
+            {items.email}
         </a>
         <a
           href="/"
           class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
         <Icon icon={PhoneIcon}/>
-           {ContactItems.phone}
+           {items.phone}
         </a>
       </span>
       <span class="w-full flex justify-center">
