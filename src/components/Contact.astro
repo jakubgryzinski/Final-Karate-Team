@@ -1,11 +1,20 @@
 ---
+interface Props {
+  items: {
+    address: string,
+    email: string,
+    phone: string,
+  }
+}
+
+const { items } = Astro.props as Props;
+
+
 import SocialsIcons from "./SocialsIcons.astro";
 import Icon from "./Icon.astro";
 import AddressIcon from "../assets/icons/address.svg?raw"
 import EmailIcon from "../assets/icons/email.svg?raw"
 import PhoneIcon from "../assets/icons/phone.svg?raw"
-
-const { items } = Astro.props;
 ---
 
 <section
