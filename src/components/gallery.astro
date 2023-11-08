@@ -12,9 +12,10 @@ interface Props {
       height: number,
     }
   }>
+  gallery: string
 }
 
-const { images } = Astro.props as Props;
+const { images, gallery } = Astro.props as Props;
 ---
 
 
@@ -41,7 +42,7 @@ images.map(({image, alt}, i) => (
  </div>
   <span class="block text-xl text-gray-400 md:text-center mt-16 px-8 md:p-0">
     <a
-      href={SocialMediaItems.gallery}
+      href={gallery}
       target="_blank"
       class="hover:underline">Zobacz więcej na naszym Facebooku</a
     >

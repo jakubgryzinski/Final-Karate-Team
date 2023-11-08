@@ -21,6 +21,9 @@ const response = await fetch('https://graphql.datocms.com/', {
           height
         }
       }
+      allContacts {
+        gallery
+      }
     }
       `,
   }),
@@ -28,6 +31,7 @@ const response = await fetch('https://graphql.datocms.com/', {
 
 const json = await response.json();
 const data = json.data.allGalleries;
+const gallery = json.data.allContacts[0].gallery
 ---
 
 
@@ -35,7 +39,7 @@ const data = json.data.allGalleries;
   <main class="min-h-screen flex justify-center md:pt-40 md:pb-20 py-28">
 
     {$isOpen ? (
-      <Gallery images={data}/>
+      <Gallery images={data} gallery={gallery}/>
     ) : null}
     <Carousel client:only images={data}/>
   </main>
