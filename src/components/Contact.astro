@@ -25,22 +25,21 @@ import PhoneIcon from "../assets/icons/phone.svg?raw"
       class="w-full h-full justify-between flex flex-col py-10 md:gap-0 gap-32"
     >
       <span class="flex flex-col w-full justify-center items-center gap-28">
-        <a
-          href="/"
-          class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
+        <span
+          class="text-light flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
         <Icon icon={AddressIcon}/>
           {items.address}
-        </a>
+        </span>
         <a
-          href="/"
+          href=`mailto:${items.email}`
           class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
         <Icon icon={EmailIcon}/>
             {items.email}
         </a>
         <a
-          href="/"
+          href=`tel:${items.phone}`
           class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 2xltext-3xl text-xl"
         >
         <Icon icon={PhoneIcon}/>

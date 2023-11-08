@@ -58,14 +58,14 @@ const data = json.data.allContacts[0];
     >
       <span class="flex justify-center gap-16 md:flex-row flex-col-reverse">
         <a
-          href="/"
+        href=`mailto:${data.email}`
           class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 text-lg"
         >
         <Icon icon={EmailIcon}/>
            {data.email}
         </a>
         <a
-          href="/"
+        href=`tel:${data.phone}`
           class="text-light hover:text-gray-300 flex justify-start md:justify-center items-center gap-4 text-lg"
         >
         <Icon icon={PhoneIcon}/>
